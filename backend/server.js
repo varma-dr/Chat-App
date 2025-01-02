@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 import authRoutes from './routes/auth.routes.js';
 
 const app = express() ;
-/// no test
+
 dotenv.config();
 const PORT = process.env.PORT || 5002;
 
