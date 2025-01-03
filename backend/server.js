@@ -3,18 +3,20 @@ import dotenv from 'dotenv'
 import authRoutes from './routes/auth.routes.js';
 import connectToMongoDB from './db/connectToMongoDB.js';
 
-dotenv.config();
 const app = express() ;
-
 const PORT = process.env.PORT || 5002;
 
-app.use(express.json());    
+dotenv.config();
 
-app.get("/", (req, res) => {
-    res.send("Hello World - Chat App");
-});
+app.use(express.json());    // to parse json data from request.body
 
 app.use("/api/auth",authRoutes);
+
+//Test
+//app.get("/", (req, res) => {
+//res.send("Hello World - Chat App");
+//});
+
 
 
 app.listen(PORT, () => {
